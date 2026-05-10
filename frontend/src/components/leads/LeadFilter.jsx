@@ -18,7 +18,7 @@ const LeadFilter = ({ search, setSearch, status, setStatus, onClear }) => {
       
       <div className="flex items-center gap-3 w-full md:w-auto">
         <div className="flex bg-white border border-slate-200 rounded-lg p-1 w-full md:w-auto">
-          {['ALL', 'INTERESTED', 'NOT_INTERESTED', 'CONVERTED'].map((s) => (
+          {['ALL', 'Interested', 'NotInterested', 'Converted'].map((s) => (
             <button
               key={s}
               onClick={() => setStatus(s === 'ALL' ? '' : s)}
@@ -28,7 +28,7 @@ const LeadFilter = ({ search, setSearch, status, setStatus, onClear }) => {
                   : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
               }`}
             >
-              {s === 'ALL' ? 'All Leads' : s.replace('_', ' ').toLowerCase()}
+              {s === 'ALL' ? 'All Leads' : s}
             </button>
           ))}
         </div>

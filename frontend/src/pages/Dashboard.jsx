@@ -34,9 +34,9 @@ const Dashboard = () => {
 
   const getStatusBadge = (status) => {
     switch (status) {
-      case 'CONVERTED': return <Badge variant="success">Converted</Badge>;
-      case 'INTERESTED': return <Badge variant="info">Interested</Badge>;
-      case 'NOT_INTERESTED': return <Badge variant="destructive">Not Interested</Badge>;
+      case 'Converted': return <Badge variant="success">Converted</Badge>;
+      case 'Interested': return <Badge variant="info">Interested</Badge>;
+      case 'NotInterested': return <Badge variant="destructive">Not Interested</Badge>;
       default: return <Badge variant="outline">{status}</Badge>;
     }
   };
@@ -83,7 +83,7 @@ const Dashboard = () => {
                   <TableCell className="font-medium">{lead.name}</TableCell>
                   <TableCell>{getStatusBadge(lead.status)}</TableCell>
                   <TableCell>
-                    <Badge variant="outline" className="capitalize">{lead.source.toLowerCase()}</Badge>
+                    <Badge variant="outline" className="capitalize">{lead.source}</Badge>
                   </TableCell>
                   <TableCell className="text-slate-500">{formatDate(lead.createdAt)}</TableCell>
                 </TableRow>

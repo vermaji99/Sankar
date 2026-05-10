@@ -15,9 +15,9 @@ import { formatDate } from '../../lib/utils';
 const LeadTable = ({ leads, onEdit, onDelete }) => {
   const getStatusBadge = (status) => {
     switch (status) {
-      case 'CONVERTED': return <Badge variant="success">Converted</Badge>;
-      case 'INTERESTED': return <Badge variant="info">Interested</Badge>;
-      case 'NOT_INTERESTED': return <Badge variant="destructive">Not Interested</Badge>;
+      case 'Converted': return <Badge variant="success">Converted</Badge>;
+      case 'Interested': return <Badge variant="info">Interested</Badge>;
+      case 'NotInterested': return <Badge variant="destructive">Not Interested</Badge>;
       default: return <Badge variant="outline">{status}</Badge>;
     }
   };
@@ -42,7 +42,7 @@ const LeadTable = ({ leads, onEdit, onDelete }) => {
               <TableCell className="text-slate-600">{lead.phone}</TableCell>
               <TableCell>
                 <Badge variant="outline" className="capitalize bg-slate-50">
-                  {lead.source.toLowerCase()}
+                  {lead.source}
                 </Badge>
               </TableCell>
               <TableCell>{getStatusBadge(lead.status)}</TableCell>

@@ -18,8 +18,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 const leadSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits'),
-  source: z.enum(['CALL', 'WHATSAPP', 'FIELD']),
-  status: z.enum(['INTERESTED', 'NOT_INTERESTED', 'CONVERTED']),
+  source: z.enum(['Call', 'WhatsApp', 'Field']),
+  status: z.enum(['Interested', 'NotInterested', 'Converted']),
   notes: z.string().optional(),
 });
 
@@ -32,8 +32,8 @@ const LeadFormModal = ({ isOpen, onClose, onSubmit, lead = null, loading = false
   } = useForm({
     resolver: zodResolver(leadSchema),
     defaultValues: {
-      status: 'INTERESTED',
-      source: 'CALL',
+      status: 'Interested',
+      source: 'Call',
     },
   });
 
@@ -44,8 +44,8 @@ const LeadFormModal = ({ isOpen, onClose, onSubmit, lead = null, loading = false
       reset({
         name: '',
         phone: '',
-        source: 'CALL',
-        status: 'INTERESTED',
+        source: 'Call',
+        status: 'Interested',
         notes: '',
       });
     }
@@ -106,9 +106,9 @@ const LeadFormModal = ({ isOpen, onClose, onSubmit, lead = null, loading = false
                     {...register('source')}
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
-                    <option value="CALL">Call</option>
-                    <option value="WHATSAPP">WhatsApp</option>
-                    <option value="FIELD">Field</option>
+                    <option value="Call">Call</option>
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="Field">Field</option>
                   </select>
                 </div>
 
@@ -120,9 +120,9 @@ const LeadFormModal = ({ isOpen, onClose, onSubmit, lead = null, loading = false
                     {...register('status')}
                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                   >
-                    <option value="INTERESTED">Interested</option>
-                    <option value="NOT_INTERESTED">Not Interested</option>
-                    <option value="CONVERTED">Converted</option>
+                    <option value="Interested">Interested</option>
+                    <option value="NotInterested">Not Interested</option>
+                    <option value="Converted">Converted</option>
                   </select>
                 </div>
               </div>

@@ -65,9 +65,9 @@ const deleteLead = async (id) => {
 const getStats = async () => {
   const [total, interested, converted, notInterested] = await Promise.all([
     prisma.lead.count(),
-    prisma.lead.count({ where: { status: 'INTERESTED' } }),
-    prisma.lead.count({ where: { status: 'CONVERTED' } }),
-    prisma.lead.count({ where: { status: 'NOT_INTERESTED' } }),
+    prisma.lead.count({ where: { status: 'Interested' } }),
+    prisma.lead.count({ where: { status: 'Converted' } }),
+    prisma.lead.count({ where: { status: 'NotInterested' } }),
   ]);
 
   const conversionRate = total > 0 ? (converted / total) * 100 : 0;

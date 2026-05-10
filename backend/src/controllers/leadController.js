@@ -75,6 +75,7 @@ const getDashboardStats = async (req, res, next) => {
     const stats = await leadService.getStats();
     res.status(200).json({ success: true, data: stats });
   } catch (error) {
+    console.error('Error in getDashboardStats:', error);
     next(error);
   }
 };
